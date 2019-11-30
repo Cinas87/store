@@ -24,6 +24,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .withUser("user@mail.com")
                 .password(passwordEncoder().encode("pass"))
                 .roles(Role.USER.name());
+
+        auth.
+                inMemoryAuthentication()
+                .withUser("admin@mail.com")
+                .password(passwordEncoder().encode("1234"))
+                .roles(Role.ADMIN.name());
+
+
+
     }
 
     @Override
